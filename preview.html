@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khaqan Ahmad | GitHub Profile Preview</title>
+  <style>
+    :root {
+      --bg: #070b16;
+      --card: #0d1426;
+      --card-soft: #101a30;
+      --border: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #247bff;
+      --cyan: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      background: var(--bg);
+    }
+
+    body {
+      min-width: 320px;
+      padding: 28px 16px 60px;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(100%, 1000px);
+      margin: 0 auto;
+    }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 18px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .preview-title {
+      color: var(--primary);
+      font: 700 13px/1.3 monospace;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .preview-meta {
+      color: var(--muted);
+      font: 11px/1.3 monospace;
+    }
+
+    .visual {
+      width: 100%;
+      margin: 0 0 32px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .visual img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    .projects {
+      margin: 0 0 32px;
+      padding: 26px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .projects h2 {
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .projects-intro {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 20px;
+      background: var(--card-soft);
+      border: 1px solid #263858;
+      border-radius: 14px;
+    }
+
+    .project-icon {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .project h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .project h3 a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .category {
+      margin-bottom: 14px;
+      color: var(--primary);
+      font: 700 10px/1.4 monospace;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+    }
+
+    .description {
+      margin-bottom: 16px;
+      color: #cbd5e1;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .stack-label {
+      margin-bottom: 5px;
+      color: #64748b;
+      font: 700 10px/1.3 monospace;
+      text-transform: uppercase;
+    }
+
+    .stack {
+      margin-bottom: 18px;
+      color: #94a3b8;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .visit {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: auto;
+      padding: 8px 12px;
+      border: 1px solid rgba(56,189,248,.25);
+      border-radius: 8px;
+      background: rgba(36,123,255,.08);
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .connect {
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .connect h2 {
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 17px;
+      border-radius: 9px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .github { background: #181717; }
+    .linkedin { background: #0a66c2; }
+    .instagram { background: #e1306c; }
+    .email { background: #d93025; }
+
+    .footer {
+      margin-top: 26px;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 18px 10px 45px;
+      }
+
+      .preview-header {
+        margin-bottom: 22px;
+      }
+
+      .projects {
+        padding: 18px;
+        border-radius: 14px;
+      }
+
+      .socials {
+        flex-direction: column;
+      }
+
+      .social {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <header class="preview-header">
+      <span class="preview-title">GitHub Profile README Preview</span>
+      <span class="preview-meta">Static GitHub Safe Rendering</span>
+    </header>
+
+    <section class="visual">
+      <img src="assets/hero.svg?v=5" alt="Khaqan Ahmad, Founder and Product Lead at MyZkool">
+    </section>
+
+    <section class="visual">
+      <img src="assets/about-life.svg?v=5" alt="About Khaqan Ahmad, professional strengths and focus areas">
+    </section>
+
+    <section class="visual">
+      <img src="assets/stack.svg?v=5" alt="Production architecture and technology ecosystem">
+    </section>
+
+    <section class="projects">
+      <h2>🛠️ Featured Production Platforms</h2>
+      <p class="projects-intro">
+        Production tested full stack platforms built for real world business,
+        education, commerce, and institutional workflows.
+      </p>
+
+      <div class="grid">
+
+        <article class="project">
+          <div class="project-icon">🏫</div>
+          <h3>
+            <a href="https://my-zkool.vercel.app/" target="_blank" rel="noopener noreferrer">
+              MyZkool
+            </a>
+          </h3>
+          <div class="category">School ERP & Digital School Platform</div>
+          <p class="description">
+            All in one digital school ecosystem for institutional websites,
+            fee management, academic administration, communication, and
+            parent teacher engagement.
+          </p>
+          <div class="stack-label">Technology</div>
+          <div class="stack">
+            React · TypeScript · Vite · Tailwind CSS · Supabase · PostgreSQL · Lucide React
+          </div>
+          <a class="visit" href="https://my-zkool.vercel.app/" target="_blank" rel="noopener noreferrer">
+            🔗 Visit MyZkool
+          </a>
+        </article>
+
+        <article class="project">
+          <div class="project-icon">📚</div>
+          <h3>
+            <a href="https://saketpustakkendra.in/" target="_blank" rel="noopener noreferrer">
+              Saket Pustak Kendra
+            </a>
+          </h3>
+          <div class="category">ERP & Business Management</div>
+          <p class="description">
+            Enterprise management platform for inventory, multi counter sales,
+            bookstore operations, and financial workflows.
+          </p>
+          <div class="stack-label">Technology</div>
+          <div class="stack">
+            React · TypeScript · Node.js · Express · PostgreSQL · Supabase · Drizzle ORM
+          </div>
+          <a class="visit" href="https://saketpustakkendra.in/" target="_blank" rel="noopener noreferrer">
+            🔗 Visit Platform
+          </a>
+        </article>
+
+        <article class="project">
+          <div class="project-icon">🌐</div>
+          <h3>
+            <a href="https://frend-verse.vercel.app/" target="_blank" rel="noopener noreferrer">
+              FriendVerse
+            </a>
+          </h3>
+          <div class="category">Social & Content Platform</div>
+          <p class="description">
+            Modern content platform for discovering and sharing friendship
+            quotes, wishes, status updates, and interactive greetings.
+          </p>
+          <div class="stack-label">Technology</div>
+          <div class="stack">
+            Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Vercel
+          </div>
+          <a class="visit" href="https://frend-verse.vercel.app/" target="_blank" rel="noopener noreferrer">
+            🔗 Visit FriendVerse
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="visual">
+      <img src="assets/id-dashboard.svg?v=5" alt="Founder identification and real world statistics">
+    </section>
+
+    <section class="visual">
+      <img src="assets/connect.svg?v=5" alt="Connect with Khaqan Ahmad">
+    </section>
+
+    <section class="connect">
+      <h2>🌐 Direct Connect</h2>
+
+      <div class="socials">
+        <a class="social github" href="https://github.com/khaqanahmed2-afk" target="_blank" rel="noopener noreferrer">
+          GitHub · khaqanahmed2-afk
+        </a>
+        <a class="social linkedin" href="https://www.linkedin.com/in/khaqan-ahmad-91299b40a" target="_blank" rel="noopener noreferrer">
+          LinkedIn · Khaqan Ahmad
+        </a>
+        <a class="social instagram" href="https://www.instagram.com/khaqanlife" target="_blank" rel="noopener noreferrer">
+          Instagram · @khaqanlife
+        </a>
+        <a class="social email" href="mailto:khaqanbuilds@gmail.com">
+          Email · khaqanbuilds@gmail.com
+        </a>
+      </div>
+
+      <p class="footer">
+        © 2026 Khaqan Ahmad · Founder &amp; Product Lead, MyZkool · India
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>
